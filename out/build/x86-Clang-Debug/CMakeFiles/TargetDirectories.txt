@@ -1,3 +1,0 @@
-C:/Users/blese/source/repos/KoDim97/cppimagefilterbase/out/build/x86-Clang-Debug/CMakeFiles/student_toolkit.dir
-C:/Users/blese/source/repos/KoDim97/cppimagefilterbase/out/build/x86-Clang-Debug/CMakeFiles/edit_cache.dir
-C:/Users/blese/source/repos/KoDim97/cppimagefilterbase/out/build/x86-Clang-Debug/CMakeFiles/rebuild_cache.dir
