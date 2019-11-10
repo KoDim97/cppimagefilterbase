@@ -27,13 +27,6 @@ bool png_toolkit::save( const std::string &pictureName )
                           imgData.pixels, 0) != 0;
 }
 
-void png_toolkit::myFirstFilter() {
-	for (int i = imgData.h / 2 * imgData.w * imgData.compPerPixel; i < imgData.h * imgData.w * imgData.compPerPixel; i+=4) {
-		imgData.pixels[i] = 255;
-		imgData.pixels[i+1] = 0;
-		imgData.pixels[i+2] = 0;
-	}
-}
 image_data png_toolkit::getPixelData( void ) const
 {
     return imgData;
