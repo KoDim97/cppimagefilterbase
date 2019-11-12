@@ -1,10 +1,15 @@
 #include "filters.h"
 
-void red::setFilter(image_data img) {
-	for (int i = img.h / 2 * img.w * img.compPerPixel; i < img.h * img.w * img.compPerPixel; i += 4) {
-		img.pixels[i] = 255;
-		img.pixels[i + 1] = 0;
-		img.pixels[i + 2] = 0;
+void Red::setFilter(image_data& img, coefficients& area) {
+
+	int curPix;
+	for (int i = area.y0; i < area.y1; i++) {
+		for (int j = area.x0; j < area.x1; j++) {
+			curPix = img.compPerPixel * (i * img.w + j);
+			img.pixels[curPix] = 255;
+			img.pixels[curPix + 1] = 0;
+			img.pixels[curPix + 2] = 0;
+		}
 	}
 	return;
 }

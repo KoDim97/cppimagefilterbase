@@ -1,7 +1,7 @@
 #pragma once
 #include "abstract_filter.h"
 
-class red : public abstract_filter{
+class Red : public abstract_filter{
 public:
-	virtual void setFilter(image_data img);
+	virtual void setFilter(image_data& img, coefficients& area);
 };

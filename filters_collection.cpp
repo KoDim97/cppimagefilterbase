@@ -4,8 +4,8 @@ void filters_collections::addFilter(string name, abstract_filter* item) {
 	collections[name] = item;
 }
 filters_collections::filters_collections() {
-	abstract_filter* redFilter = new red();
-	collections["red"] = redFilter;
+	abstract_filter* redFilter = new Red();
+	collections["Red"] = redFilter;
 }
 filters_collections::~filters_collections() {
 	for (auto var : collections)
@@ -18,6 +18,6 @@ abstract_filter* filters_collections::getFilter(string name) {
 		return collections.find(name)->second;
 	}
 	else{
-		return NULL;
+		throw "Collection does not contain this filter";
 	}
 }
