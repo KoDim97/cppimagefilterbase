@@ -13,8 +13,7 @@ public:
 private:
 	int size_threshold_matrix;
 	void setMonochrome(image_data& img, coefficients& area);
-	int getMedian(image_data& img, coefficients& matrix_area, coefficients& filter_area);
-	void cutLess(image_data& img, coefficients& area, int intensity);
+	void cutLessMedian(image_data& img, coefficients& matrix_area, coefficients& filter_area);
 };
 
 //class Blur : public abstract_filter {

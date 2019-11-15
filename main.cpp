@@ -23,7 +23,8 @@ vector<pair<string, coefficients>> cfgParser(string cfg_name) {
 			result.push_back(str);
 		}
 		if (result.size() != 5) {
-			throw "Not valid config line";
+			continue;
+			//throw "Not valid config line";
 		}
 		try {
 			coefficients coef(result);
@@ -48,8 +49,8 @@ int main( int argc, char *argv[] )
 		vector<pair<string, coefficients>> task_list = cfgParser(argv[1]);
         png_toolkit studTool;
         studTool.load(argv[2]);
-		filters_collections filters;
 		image_data img_data = studTool.getPixelData();
+		filters_collections filters;
 		for (auto& task_item : task_list) {
 			task_item.second.transformToArea(img_data.w, img_data.h);
 			filters.getFilter(task_item.first)->setFilter(img_data, task_item.second);
