@@ -1,4 +1,3 @@
-#include <array>
 #include "filters.h"
 
 void Red::setFilter(image_data& img, coefficients& area) {

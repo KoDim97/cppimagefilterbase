@@ -1,4 +1,6 @@
 #pragma once
+#include <array>
+#include <algorithm>
 #include "abstract_filter.h"
 
 class Red : public abstract_filter{
