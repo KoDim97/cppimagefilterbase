@@ -6,7 +6,8 @@ void filters_collections::addFilter(string name, abstract_filter* item) {
 filters_collections::filters_collections() {
 	collections["Red"] = new Red();
 	collections["Threshold"] = new Threshold();
-
+	collections["Blur"] = new Blur();
+	collections["Edge"] = new Edge();
 }
 filters_collections::~filters_collections() {
 	for (auto var : collections)
