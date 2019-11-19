@@ -163,14 +163,14 @@ int Edge::getKernalValue(image_data& imgCopy, coefficients& matrix_area, coeffic
 	int curPix, count = 0, sum = 0;
 	int numOfElements = size_edge_matrix * size_edge_matrix;
 	for (int i = matrix_area.y0; i <= matrix_area.y1; i++) {
-		if (i < 0 || i >= filter_area.y1) {
+		if (i < filter_area.y0 || i >= filter_area.y1) {
 			count += size_edge_matrix;
 			continue;
 		}
 		for (int j = matrix_area.x0; j <= matrix_area.x1; j++) {
-			if (j > -1 && j < filter_area.x1) {
+			if (j >= filter_area.x0 && j < filter_area.x1) {
 				curPix = imgCopy.compPerPixel * (i * imgCopy.w + j);
-				if (count == (numOfElements / 2 + 1)) {
+				if (count == (numOfElements / 2)) {
 					sum += 9 * imgCopy.pixels[curPix];
 				}
 				else {
