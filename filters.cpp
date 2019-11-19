@@ -173,7 +173,6 @@ int Edge::getKernalValue(image_data& imgCopy, coefficients& matrix_area, coeffic
 				if (count == (numOfElements / 2)) {
 					sum += 9 * imgCopy.pixels[curPix];
 				}
-
 				else {
 					sum += -1 * imgCopy.pixels[curPix];
 				}
@@ -193,7 +192,7 @@ void Edge::setMonochrome(image_data& img, coefficients& area) {
 			curRed = img.pixels[curPix];
 			curGreen = img.pixels[curPix + 1];
 			curBlue = img.pixels[curPix + 2];
-			monochrome = (3 * curRed + 6 * curGreen + curBlue) / 10;
+			monochrome = 0.3 * curRed + 0.6 * curGreen + 0.1 * curBlue;
 			img.pixels[curPix] = monochrome;
 			img.pixels[curPix + 1] = monochrome;
 			img.pixels[curPix + 2] = monochrome;
