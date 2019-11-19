@@ -113,11 +113,11 @@ void Blur::getKernalValue(image_data& imgCopy, coefficients& matrix_area, coeffi
 		newValue[i] = 0;
 	}
 	for (int i = matrix_area.y0; i <= matrix_area.y1; i++) {
-		if (i < 0 || i >= filter_area.y1) {
+		if (i < filter_area.y0 || i >= filter_area.y1) {
 			continue;
 		}
 		for (int j = matrix_area.x0; j <= matrix_area.x1; j++) {
-			if (j > -1 && j < filter_area.x1) {
+			if (j >= filter_area.x0 && j < filter_area.x1) {
 				curPix = imgCopy.compPerPixel * (i * imgCopy.w + j);
 				newValue[0] += imgCopy.pixels[curPix];
 				newValue[1] += imgCopy.pixels[curPix + 1];
