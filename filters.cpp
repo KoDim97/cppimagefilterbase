@@ -176,8 +176,8 @@ int Edge::getKernalValue(image_data& imgCopy, coefficients& matrix_area, coeffic
 				else {
 					sum -= imgCopy.pixels[curPix];
 				}
-				count++;
 			}
+			count++;
 		}
 	}
 	return clump(sum);
