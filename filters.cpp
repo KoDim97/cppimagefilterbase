@@ -173,6 +173,7 @@ int Edge::getKernalValue(image_data& imgCopy, coefficients& matrix_area, coeffic
 				if (count == (numOfElements / 2)) {
 					sum += 9 * imgCopy.pixels[curPix];
 				}
+
 				else {
 					sum += -1 * imgCopy.pixels[curPix];
 				}
